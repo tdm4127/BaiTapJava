@@ -1,0 +1,110 @@
+/* Bố cục dùng chung: sidebar, nội dung chính, trang 404. */
+/* Header ở trên, sidebar bên trái, nội dung bên phải. */
+.app-layout {
+    display: flex;
+    height: calc(100vh - 66px);
+    overflow: hidden;
+}
+
+.main-content {
+    min-width: 0;
+    flex: 1;
+    padding: 20px 22px 28px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #f5f7fb;
+}
+
+.error-box {
+    max-width: 720px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+}
+
+.error-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 15px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff0f1;
+    color: #dc3545;
+    font-size: 20px;
+}
+
+.error-box h1 {
+    margin: 0 0 8px;
+    font-size: 25px;
+}
+
+.error-box p {
+    margin: 0;
+    color: #6c757d;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 17px 13px 24px;
+    }
+}
+
+/* Sidebar: menu chung cho Admin và Employee. */
+.sidebar {
+    width: 225px;
+    flex-shrink: 0;
+    padding: 20px 12px;
+    background: white;
+    border-right: 1px solid #e6e9ed;
+    transition: width .2s ease;
+}
+
+.sidebar-title {
+    padding: 0 12px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #9aa0a6;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 13px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    color: #495057;
+    text-decoration: none;
+}
+
+.sidebar-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: #eaf2ff;
+    color: #0d6efd;
+}
+
+.sidebar-link.active {
+    font-weight: 600;
+}
+
+/* Thu gọn Sidebar khi cần. */
+.sidebar-collapsed .sidebar { width: 68px; padding: 20px 8px; }
+.sidebar-collapsed .sidebar-title,
+.sidebar-collapsed .sidebar-link span { display: none; }
+.sidebar-collapsed .sidebar-link { justify-content: center; padding: 11px 10px; }
+
+/* Trên màn hình nhỏ chỉ hiển thị biểu tượng menu. */
+@media (max-width: 768px) {
+    .sidebar { width: 68px; padding: 20px 8px; }
+    .sidebar-title, .sidebar-link span { display: none; }
+    .sidebar-link { justify-content: center; padding: 11px 10px; }
+}

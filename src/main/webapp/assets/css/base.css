@@ -1,0 +1,99 @@
+/* CSS nền: font, màu nền và bố cục tiêu đề trang. */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+/* Khung trang và tiêu đề. */
+.page-container {
+    width: 100%;
+}
+
+.page-heading {
+    margin-bottom: 16px;
+}
+
+.page-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.page-heading h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-heading h1 i {
+    margin-right: 7px;
+    font-size: 20px;
+    color: #0d6efd;
+}
+
+.project-page .page-heading h1 i { color: #16a36a; }
+.task-page .page-heading h1 i { color: #e6a000; }
+.assignment-page .page-heading h1 i { color: #7c3aed; }
+
+
+/* Nhãn và ô nhập chung. */
+.form-label {
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #343a40;
+}
+
+.required-mark,
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.form-control,
+.form-select {
+    min-height: 40px;
+    border: 1px solid #dfe5ec;
+    border-radius: 7px;
+    background-color: #fff;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.16rem rgba(13, 110, 253, 0.10);
+}
+
+.form-control[readonly] {
+    background: #f7f8fa;
+    color: #6c757d;
+}
+
+textarea.form-control {
+    min-height: 96px;
+}
+
+@media (max-width: 768px) {
+    .page-heading h1 {
+        font-size: 21px;
+    }
+}

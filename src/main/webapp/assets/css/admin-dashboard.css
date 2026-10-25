@@ -1,0 +1,73 @@
+/* ADMIN DASHBOARD: chỉ dùng cho trang tổng quan quản trị.
+   1. Lời chào | 2. Ba ô thống kê | 3. Bốn ô chức năng | 4. Màn hình nhỏ. */
+
+/* 1. Lời chào Admin. */
+.home-dashboard { max-width: 1100px; }
+.home-welcome {
+    display: flex; justify-content: space-between; align-items: center; gap: 18px;
+    min-height: 120px; padding: 22px 24px;
+    border: 1px solid #e3e9ef; border-radius: 10px;
+    background: linear-gradient(90deg, #fff, #f8fbff);
+}
+.home-eyebrow { color: #0d6efd; font-size: 11px; font-weight: 700; }
+.home-welcome h1 { margin: 5px 0; font-size: 27px; color: #111827; }
+.home-welcome p { margin: 0; color: #728096; font-size: 13px; }
+.home-illustration {
+    display: flex; align-items: center; justify-content: center;
+    width: 76px; height: 76px; border-radius: 18px;
+    background: #eaf3ff; color: #0d6efd; font-size: 33px;
+}
+
+/* 2. Ba ô thống kê: nhân viên, dự án và công việc. */
+.home-quick-stats, .home-module-grid {
+    display: grid; gap: 14px; margin-top: 16px;
+}
+.home-quick-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.home-module-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-quick-stat, .home-module-card { background: #fff; border: 1px solid #e2e8ef; border-radius: 10px; }
+.home-quick-stat { display: flex; align-items: center; gap: 12px; min-height: 84px; padding: 15px; }
+.home-quick-stat > span {
+    display: flex; align-items: center; justify-content: center;
+    flex: 0 0 39px; height: 39px; border-radius: 9px;
+    background: #eef4ff; color: #0d6efd; font-size: 17px;
+}
+.home-quick-stat > div { min-width: 0; display: grid; }
+.home-quick-stat strong { color: #182230; font-size: 20px; line-height: 1.1; }
+.home-quick-stat small { margin-top: 4px; color: #7a8695; font-size: 11px; }
+
+/* 3. Ô liên kết sang các trang quản lý. */
+.home-module-card {
+    display: flex; flex-direction: column; min-height: 210px; padding: 19px;
+    color: #1f2937; text-decoration: none;
+}
+.home-module-card:hover { border-color: #cfd8e4; box-shadow: 0 5px 14px #1f2d3d10; }
+.home-module-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 46px; height: 46px; margin-bottom: 16px;
+    border-radius: 10px; font-size: 20px;
+}
+.home-module-card strong { font-size: 15px; }
+.home-module-card p { min-height: 52px; margin: 8px 0 18px; color: #758292; font-size: 12px; line-height: 1.55; }
+.home-module-action {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 34px; margin-top: auto; padding: 0 11px;
+    border-radius: 7px; font-size: 12px; font-weight: 600;
+}
+.module-employee .home-module-icon, .module-employee .home-module-action { background: #e9f2ff; color: #0d6efd; }
+.module-project .home-module-icon, .module-project .home-module-action { background: #e7f8ef; color: #15945e; }
+.module-task .home-module-icon, .module-task .home-module-action { background: #fff4d9; color: #d89400; }
+.module-assignment .home-module-icon, .module-assignment .home-module-action {
+    background: #f1eafd; color: #7c3aed;
+}
+
+/* 4. Giảm số cột khi màn hình hẹp. */
+@media (max-width: 1050px) {
+    .home-quick-stats, .home-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+    .home-module-grid { grid-template-columns: 1fr; }
+    .home-illustration { display: none; }
+}
+@media (max-width: 560px) {
+    .home-quick-stats { grid-template-columns: 1fr; }
+}

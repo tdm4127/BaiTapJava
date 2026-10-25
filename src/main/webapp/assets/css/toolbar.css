@@ -1,0 +1,104 @@
+/* Thanh công cụ: tìm kiếm, bộ lọc và nút thao tác. */
+/* Thanh tìm kiếm, bộ lọc và nút thêm. */
+.module-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #e2e8ef;
+    border-radius: 8px;
+}
+
+.toolbar-filters {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toolbar-search {
+    width: 360px;
+    max-width: 100%;
+}
+
+.toolbar-select { width: 170px; }
+.toolbar-select-wide { width: 210px; }
+.toolbar-date { width: 240px; }
+
+.toolbar-search .input-group-text,
+.toolbar-date .input-group-text {
+    background: #fff;
+    border-color: #dfe5ec;
+    color: #718096;
+}
+
+.toolbar-add {
+    min-height: 40px;
+    flex-shrink: 0;
+    padding: 0 15px;
+    border: 0;
+    border-radius: 7px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.employee-page .toolbar-add { background: #0d6efd; }
+.project-page .toolbar-add { background: #18a96b; }
+.task-page .toolbar-add { background: #f0ad00; color: #fff; }
+.assignment-page .toolbar-add { background: #7c3aed; }
+
+.employee-page .toolbar-add:hover { background: #0b5ed7; }
+.project-page .toolbar-add:hover { background: #148d59; }
+.task-page .toolbar-add:hover { background: #d89900; }
+.assignment-page .toolbar-add:hover { background: #6930c3; }
+
+@media (min-width: 1101px) {
+    .task-toolbar .toolbar-filters {
+        flex-wrap: nowrap;
+    }
+
+    .task-toolbar .toolbar-search {
+        flex: 1;
+        min-width: 230px;
+    }
+
+    .task-toolbar .toolbar-select {
+        width: 145px;
+        flex: 0 0 145px;
+    }
+
+    .task-toolbar .toolbar-select-wide {
+        width: 175px;
+        flex: 0 0 175px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .module-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .toolbar-filters {
+        flex-wrap: wrap;
+    }
+
+    .toolbar-add {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px) {
+    .toolbar-filters,
+    .toolbar-search,
+    .toolbar-select,
+    .toolbar-select-wide,
+    .toolbar-date,
+    .toolbar-add {
+        width: 100%;
+    }
+}

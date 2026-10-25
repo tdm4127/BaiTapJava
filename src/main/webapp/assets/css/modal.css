@@ -1,0 +1,283 @@
+/* Popup form và popup xem thông tin; dùng chung nhiều trang. */
+/* Popup thêm/sửa dùng chung. */
+.app-modal {
+    border: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.app-modal .modal-header {
+    padding: 16px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e7ebef;
+}
+
+.app-modal .modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.app-modal .modal-body {
+    padding: 20px;
+}
+
+.app-modal .modal-footer {
+    padding: 13px 20px;
+    background: #fafbfc;
+    border-top: 1px solid #e7ebef;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+.project-form-content {
+    width: 820px;
+    max-width: 100%;
+}
+
+.project-date-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr .75fr;
+    gap: 16px;
+    margin-bottom: 15px;
+}
+
+/* Modal xem chung */
+.view-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.view-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 66px;
+    height: 34px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: #eaf2ff;
+    color: #0d6efd;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.view-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.view-info-item {
+    padding: 12px;
+    border: 1px solid #e5eaf0;
+    border-radius: 8px;
+    background: #fbfcfd;
+}
+
+.view-info-item small {
+    display: block;
+    margin-bottom: 4px;
+    color: #7a8795;
+    font-size: 11px;
+}
+
+.view-info-item strong,
+.view-info-item span {
+    color: #263545;
+    font-size: 13px;
+}
+
+/* Project detail: thông tin trái, danh sách task phải */
+/* Popup chi tiết dự án. */
+.project-detail-layout {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    min-height: 390px;
+}
+
+.project-detail-info {
+    padding: 18px;
+    border-right: 1px solid #e5eaf0;
+    background: #fbfcfe;
+}
+
+.project-detail-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 18px;
+}
+
+.project-detail-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff1c7;
+    color: #e6a000;
+    font-size: 20px;
+}
+
+.project-detail-title h5 {
+    margin: 0 0 4px;
+    font-size: 16px;
+}
+
+.project-detail-meta {
+    display: grid;
+    gap: 10px;
+}
+
+.project-detail-meta-row {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.project-detail-meta-row span:first-child {
+    color: #7c8998;
+}
+
+.project-detail-description {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e4e9ef;
+}
+
+.project-detail-description small {
+    color: #7c8998;
+}
+
+.project-detail-description p {
+    margin: 6px 0 0;
+    color: #405164;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.project-detail-tasks {
+    min-width: 0;
+    padding: 18px;
+}
+
+.project-detail-tasks-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.project-detail-tasks-head h6 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project-detail-tasks-head span {
+    color: #7c8998;
+    font-size: 11px;
+}
+
+.project-task-view-table {
+    margin: 0;
+    font-size: 12px;
+}
+
+.project-task-view-table thead th {
+    padding: 9px 10px;
+    background: #f4f7fa;
+    color: #536476;
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.project-task-view-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #edf1f4;
+}
+
+@media (max-width: 900px) {
+    .project-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-info {
+        border-right: 0;
+        border-bottom: 1px solid #e5eaf0;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-date-group,
+    .view-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tương thích các modal View của Employee / Task / Assignment */
+.view-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.view-head h5 {
+    margin: 0 0 3px;
+    font-size: 17px;
+}
+
+.view-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.view-grid > div {
+    padding: 12px;
+    border: 1px solid #e5eaf0;
+    border-radius: 8px;
+    background: #fbfcfd;
+}
+
+.view-grid small,
+.view-description small {
+    display: block;
+    margin-bottom: 4px;
+    color: #7a8795;
+    font-size: 11px;
+}
+
+.view-grid strong {
+    color: #263545;
+    font-size: 13px;
+}
+
+.view-description {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid #e5eaf0;
+    border-radius: 8px;
+    background: #fbfcfd;
+}
+
+.view-description p {
+    margin: 5px 0 0;
+    color: #405164;
+    font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .view-grid {
+        grid-template-columns: 1fr;
+    }
+}

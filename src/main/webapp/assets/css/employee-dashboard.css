@@ -1,0 +1,112 @@
+/* Giao diện dùng chung cho Tổng quan, Công việc của tôi và Hồ sơ cá nhân.
+   1. Khung trang và lời chào | 2. Ba ô thống kê
+   3. Bảng công việc | 4. Hồ sơ cá nhân | 5. Màn hình nhỏ */
+
+/* 1. Khung nội dung và lời chào. */
+.employee-dashboard { max-width: 1150px; color: #263447; }
+.employee-dashboard h1 { margin: 0 0 10px; font-size: 24px; color: #172438; }
+.employee-dashboard h2 { margin: 0 0 6px; font-size: 17px; color: #172438; }
+.employee-dashboard p { margin: 0; font-size: 13px; line-height: 1.6; color: #758498; }
+.employee-dashboard .ed-muted { margin-bottom: 16px; }
+.employee-dashboard .ed-hero {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 25px; border: 1px solid #e1e8f0; border-radius: 12px;
+    background: linear-gradient(105deg, #fff, #eff6ff);
+}
+.employee-dashboard .ed-hero small { color: #2563eb; font-weight: 700; letter-spacing: 1px; }
+.employee-dashboard .ed-hero h1 { margin: 6px 0; font-size: 27px; }
+.employee-dashboard .ed-hero-icon {
+    padding: 16px; border-radius: 14px;
+    background: #e5f0ff; color: #2563eb;
+    font-size: 30px;
+}
+
+/* 2. Các ô đếm trạng thái công việc. */
+.employee-dashboard .ed-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin-top: 16px;
+}
+.employee-dashboard .ed-stat, .employee-dashboard .ed-panel {
+    background: #fff; border: 1px solid #e2e8ef; border-radius: 12px;
+}
+.employee-dashboard .ed-stat { display: flex; align-items: center; gap: 14px; padding: 18px; }
+.employee-dashboard .ed-stat > i {
+    padding: 11px; border-radius: 10px;
+    background: #eaf2ff; color: #2563eb;
+    font-size: 20px;
+}
+.employee-dashboard .ed-stat:nth-child(2) > i { background: #fff4dc; color: #a47300; }
+.employee-dashboard .ed-stat:nth-child(3) > i { background: #e3f7ed; color: #18865a; }
+.employee-dashboard .ed-stat strong { display: block; font-size: 23px; }
+.employee-dashboard .ed-stat span { color: #758498; font-size: 12px; }
+.employee-dashboard .ed-intro { margin-top: 16px; padding: 20px; }
+
+/* 3. Bảng công việc và nút thay đổi trạng thái. */
+.employee-dashboard .ed-panel { overflow: hidden; }
+.employee-dashboard .ed-panel-head {
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 12px;
+    padding: 18px 20px; border-bottom: 1px solid #edf1f5;
+}
+.employee-dashboard .ed-tag {
+    padding: 6px 10px; border-radius: 16px;
+    background: #f0f3f7; color: #69798b;
+    font-size: 11px; white-space: nowrap;
+}
+.employee-dashboard .ed-table-wrap { overflow-x: auto; }
+.employee-dashboard .ed-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; }
+.employee-dashboard .ed-table th, .employee-dashboard .ed-table td {
+    padding: 14px; text-align: left;
+    border-bottom: 1px solid #edf1f5;
+}
+.employee-dashboard .ed-table th { background: #f8fafc; color: #617287; font-size: 12px; }
+.employee-dashboard .ed-table tr:last-child td { border-bottom: 0; }
+.employee-dashboard .ed-status { padding: 6px 9px; border-radius: 7px; font-size: 11px; white-space: nowrap; }
+.employee-dashboard .ed-status.todo { color: #667789; background: #eef2f6; }
+.employee-dashboard .ed-status.doing { color: #165db4; background: #e4f0ff; }
+.employee-dashboard .ed-status.done { color: #178659; background: #dff5e9; }
+.employee-dashboard .ed-button {
+    padding: 8px 12px; border: 0;
+    border-radius: 7px; background: #2563eb;
+    color: #fff; font-size: 12px;
+    cursor: pointer;
+}
+/* Giữ form gửi trạng thái gọn trong một ô bảng. */
+.employee-dashboard .ed-action-form { margin: 0; }
+.employee-dashboard .ed-button.finish { background: #168655; }
+.employee-dashboard .ed-button:disabled { background: #edf1f5; color: #77879a; cursor: default; }
+.employee-dashboard .ed-note { padding: 12px 20px; font-size: 12px; color: #8190a2; }
+
+/* 4. Hồ sơ: thông tin xếp thành hai cột. */
+.employee-dashboard .ed-profile { padding: 22px; }
+.employee-dashboard .ed-profile-head {
+    display: flex; align-items: center;
+    gap: 14px; padding-bottom: 18px;
+    border-bottom: 1px solid #edf1f5;
+}
+.employee-dashboard .ed-profile-head > i {
+    padding: 13px; border-radius: 12px;
+    background: #eaf2ff; color: #2563eb;
+    font-size: 28px;
+}
+.employee-dashboard .ed-profile-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 16px; padding-top: 20px;
+}
+.employee-dashboard .ed-profile-grid > div { display: grid; gap: 6px; min-width: 0; }
+.employee-dashboard .ed-profile-grid span { color: #758498; font-size: 12px; }
+.employee-dashboard .ed-profile-grid strong {
+    padding: 11px 12px; border: 1px solid #e5ebf2;
+    border-radius: 8px; background: #f8fafc;
+    font-size: 13px; font-weight: 500;
+    overflow-wrap: anywhere;
+}
+.employee-dashboard .ed-profile .ed-note { padding: 18px 0 0; }
+
+/* 5. Thu gọn trên điện thoại. */
+@media (max-width: 720px) {
+    .employee-dashboard .ed-hero-icon { display: none; }
+    .employee-dashboard .ed-stats, .employee-dashboard .ed-profile-grid { grid-template-columns: 1fr; }
+    .employee-dashboard .ed-panel-head { flex-wrap: wrap; }
+    .employee-dashboard .ed-hero h1 { font-size: 23px; }
+}

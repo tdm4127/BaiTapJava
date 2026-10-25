@@ -1,0 +1,55 @@
+/* HEADER: Logo bên trái, tài khoản và menu đăng xuất bên phải. */
+.app-header {
+    display: flex; justify-content: space-between; align-items: center;
+    height: 66px; padding: 0 24px; background: #212529; color: white;
+}
+.header-brand { display: flex; align-items: center; gap: 11px; }
+.header-brand-icon {
+    display: grid; place-items: center; width: 38px; height: 38px;
+    border-radius: 9px; background: #ffffff1f; font-size: 18px;
+}
+.header-title { font-size: 16px; font-weight: 700; }
+
+/* Tài khoản: nút mở menu khi bấm. */
+.header-account-menu { position: relative; }
+.header-user-toggle {
+    display: flex; align-items: center; gap: 10px; padding: 5px 10px 5px 5px;
+    color: white; border-radius: 24px; cursor: pointer; list-style: none;
+}
+.header-user-toggle::-webkit-details-marker { display: none; }
+.header-user-toggle::marker { content: ''; }
+.header-user-toggle:hover, .header-account-menu[open] .header-user-toggle { background: #ffffff20; }
+.header-user-toggle:focus-visible { outline: 2px solid #b6d6ff; outline-offset: 2px; }
+.header-avatar, .header-account-avatar {
+    display: grid; place-items: center; flex-shrink: 0;
+    border-radius: 50%; background: #e6f1ff; color: #2963ad;
+}
+.header-avatar { width: 34px; height: 34px; font-size: 19px; }
+.header-user-name { font-size: 13px; font-weight: 600; }
+.header-chevron { font-size: 11px; transition: transform .15s; }
+.header-account-menu[open] .header-chevron { transform: rotate(180deg); }
+
+/* Menu xổ xuống: thông tin tài khoản và nút Đăng xuất. */
+.header-account-dropdown {
+    position: absolute; top: calc(100% + 10px); right: 0; z-index: 1100;
+    width: 230px; padding: 8px; background: white; color: #263447;
+    border: 1px solid #e5e7eb; border-radius: 12px;
+    box-shadow: 0 10px 28px #00000024;
+}
+.header-account-info { display: flex; gap: 10px; align-items: center; padding: 10px 8px 13px; border-bottom: 1px solid #edf0f4; }
+.header-account-avatar { width: 40px; height: 40px; font-size: 22px; }
+.header-account-name { font-size: 14px; font-weight: 700; overflow-wrap: anywhere; }
+.header-account-role { color: #798494; font-size: 12px; }
+.header-logout-btn {
+    width: 100%; margin-top: 6px; padding: 10px; text-align: left;
+    border: none; border-radius: 7px; background: white;
+    color: #c03942; font-size: 13px; font-weight: 600; cursor: pointer;
+}
+.header-logout-btn i { margin-right: 9px; font-size: 16px; }
+.header-logout-btn:hover { background: #fff1f2; }
+
+@media (max-width: 768px) {
+    .app-header { padding: 0 14px; }
+    .header-title { display: none; }
+    .header-user-name { display: none; }
+}

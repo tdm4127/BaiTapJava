@@ -1,0 +1,98 @@
+/* Trang đăng nhập: khung, ô nhập và nút đăng nhập. */
+/* Căn giữa form đăng nhập. */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: #f5f7fb;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 34px 32px 30px;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+}
+
+.login-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.login-brand-icon {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #0d6efd;
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.login-header {
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.login-header h1 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.login-header p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.login-form .form-field {
+    margin-bottom: 18px;
+}
+
+.login-form .input-group-text {
+    min-width: 42px;
+    justify-content: center;
+    border-color: #dfe5ec;
+    background: #f8fafc;
+    color: #6b7280;
+}
+
+.login-form .form-control {
+    min-height: 44px;
+}
+
+/* Nút đăng nhập. */
+.login-button {
+    width: 100%;
+    min-height: 44px;
+    margin-top: 4px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.login-footer {
+    margin-top: 22px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 12px;
+}
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 16px;
+    }
+
+    .login-card {
+        padding: 28px 22px 24px;
+    }
+}
